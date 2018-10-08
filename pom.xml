@@ -6,7 +6,18 @@
 
     <groupId>com.atguigu.gmall</groupId>
     <artifactId>gmall-0529</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>gmall-webutil</module>
+        <module>gmall-user-service</module>
+        <module>gmall-user-web</module>
+        <module>gmall-serviceutil</module>
+        <module>gmall-bean</module>
+        <module>gmall-common</module>
+        <module>gmall-interface</module>
+        <module>gmall-parent</module>
+    </modules>
 
 
 </project>
