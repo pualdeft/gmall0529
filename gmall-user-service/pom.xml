@@ -7,20 +7,26 @@
         <artifactId>gmall-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
+    <description>用户业务逻辑模块</description>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>gmall-user-service</artifactId>
-<dependencies>
-    <dependency>
-        <groupId>com.atguigu.gmall</groupId>
-        <artifactId>gmall-interface</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-        <groupId>com.atguigu.gmall</groupId>
-        <artifactId>gmall-serviceutil</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-    </dependency>
-</dependencies>
+
+    <dependencies>
+        <!--service依赖Interface，对interface进行实现-->
+        <dependency>
+            <groupId>com.atguigu.gmall</groupId>
+            <artifactId>gmall-interface</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <!--service 依赖 service专用的工具包-->
+        <dependency>
+            <groupId>com.atguigu.gmall</groupId>
+            <artifactId>gmall-serviceutil</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
 
 </project>
