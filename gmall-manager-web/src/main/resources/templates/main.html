@@ -8,6 +8,9 @@
         <script type="text/javascript" src="/easyui/jquery.easyui.min.js"></script>
         <script type="text/javascript" src="/easyui/easyloader.js"></script>
         <script type="text/javascript" src="/easyui/clickedit.js"></script>
+        <script type="text/javascript" src="/easyui/datagrid-detailview.js"></script>
+<script type="text/javascript" src="/webuploader/webuploader.js"></script>
+       <link rel="stylesheet" type="text/css" href="/webuploader/webuploader.css">
         <link rel="stylesheet" type="text/css" href="/easyui/themes/icon.css">
         <link rel="stylesheet" type="text/css"  href="/easyui/themes/default/easyui.css">
     </head>
@@ -33,7 +36,9 @@
 
             </div>
             <div title="商品信息管理">
-
+                <ul>
+                    <li><a href="#" onclick="addtab('商品信息管理','spu/listPage.html')">商品SPU管理</a></li>
+                </ul>
             </div>
             <div title="广告管理">
 
@@ -61,6 +66,7 @@
         }
 
     }
+
 
 
 </script>

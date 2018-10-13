@@ -64,6 +64,43 @@ function addAttrInfo() {
 
     if(getCatalog3Info()!=null){
         $("#attrDlg").dialog('open');
+        $("#attrInfoValueTable").datagrid({
+            url:'/attrs.json',
+            singleSelect:true,
+            onDblClickCell:onClickCell,
+            columns:[[
+                {field:'id',title:'属性值id',width:100},
+                {field:'valueName',title:'属性值名称',width:100,editor:{
+                        type:'validatebox',options:{
+                            required:true
+                        }
+                    }
+                }
+            ]],
+            toolbar: [{
+                text:'添加',
+                iconCls: 'icon-add',
+                handler: function(){
+                    //给表格中添加一行数据而且可以双击编辑的
+                    $("#attrInfoValueTable").datagrid('appendRow',{
+                        id:'',
+                        valueName:''
+                    });
+
+                }
+            },'-',{
+                text:'删除',
+                iconCls: 'icon-remove',
+                handler: function(){
+                    //删除指定的行
+                    //返回当前行的数据
+                    var  data=  $("#attrInfoValueTable").datagrid('getSelected');
+                    var index=  $("#attrInfoValueTable").datagrid('getRowIndex',data)
+                    $("#attrInfoValueTable").datagrid('deleteRow',index);
+                }
+            }]
+
+        })
 
     }else{
         $.messager.alert('警告','请先选择三级分类');

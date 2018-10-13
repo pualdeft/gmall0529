@@ -10,4 +10,6 @@ public interface CatalogService {
     public List<BaseCatalog1> getAllBaseCatalog1();
     public List<BaseCatalog2> getAllBaseCatalog2ByC1Id(Integer catalog1Id);
     public List<BaseCatalog3> getAllBaseCatalog3byC2Id(Integer catalog2Id);
- }
+
+    void addBaseInfo(BaseCatalog3 baseCatalog3);
+}
