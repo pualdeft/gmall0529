@@ -1,8 +1,11 @@
 package manager.spu;
 
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.Data;
 import manager.SuperBean;
+
+import java.util.List;
 
 /**
  * Spu销售属性
@@ -14,4 +17,6 @@ public class SpuSaleAttr extends SuperBean {
     private Integer spuId;
     private Integer saleAttrId;
     private String saleAttrName;
+    @TableField(exist = false)
+    private List<SpuSaleAttrValue> saleAttrValues;
 }

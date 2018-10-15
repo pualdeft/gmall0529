@@ -1,8 +1,11 @@
 package manager.spu;
 
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.Data;
 import manager.SuperBean;
+
+import java.util.List;
 
 /**
  * Spu信息
@@ -14,4 +17,8 @@ public class SpuInfo extends SuperBean {
     private String description;//描述
     private Integer catalog3Id;//三级分类id
     private Integer tmId; //品牌id
+    @TableField(exist = false)
+    private List<SpuImage> spuImages;
+@TableField(exist = false)
+    private List<SpuSaleAttr> spuSaleAttrs;
 }
