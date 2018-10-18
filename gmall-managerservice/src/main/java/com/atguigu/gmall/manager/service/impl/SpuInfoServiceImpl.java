@@ -2,6 +2,7 @@ package com.atguigu.gmall.manager.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.atguigu.gmall.mapper.spu.*;
+
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import lombok.extern.slf4j.Slf4j;
 import manager.SpuInfoService;
@@ -38,6 +39,7 @@ public class SpuInfoServiceImpl implements SpuInfoService {
         spuInfoMapper.insert(spuInfo);
         Integer id = spuInfo.getId();
         List<SpuImage> spuImages = spuInfo.getSpuImages();
+        log.info("kankan tupainxinxi "+spuInfo);
         for(SpuImage spuImage : spuImages){
             spuImage.setSpuId(id);
             spuImageMapper.insert(spuImage);
@@ -55,6 +57,11 @@ spuSaleAttrValueMapper.insert(saleAttrValue);
 
 
 }
+    }
+
+    @Override
+    public List<SpuImage> getSpuImages(Integer spuId) {
+        return spuImageMapper.selectList(new QueryWrapper<SpuImage>().eq("spu_id",spuId));
     }
 
 }
